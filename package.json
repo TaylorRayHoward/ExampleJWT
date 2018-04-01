@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"yarn run start\" \"yarn --cwd ./client run start\"",
     "start": "nodemon index.js"
   },
   "author": "",
@@ -13,6 +14,7 @@
     "body-parser": "^1.18.2",
     "bookshelf": "^0.13.3",
     "bookshelf-secure-password": "^3.0.1",
+    "concurrently": "^3.5.1",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "jsonwebtoken": "^8.2.0",

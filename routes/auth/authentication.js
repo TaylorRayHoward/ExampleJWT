@@ -3,6 +3,10 @@ const router = require('express').Router();
 const passport = require('../../config/passport');
 const jwt = require('jsonwebtoken');
 
+router.get('/getUser', passport.authenticate('jwt', { session: false }), (req, res) => {
+  return res.send(req.user);
+});
+
 router.post('/seedUser', (req, res) => {
   if (!req.body.email || !req.body.password) {
     return res.status(401).send('no fields');
