@@ -81,5 +81,10 @@ app.get('/protected', passport.authenticate('jwt', { session: false }), (req, re
   res.send('i\'m protected');
 });
 
-const PORT = process.env.PORT || 3000;
+app.get('/getUser', passport.authenticate('jwt', { session: false }), (req, res) => {
+  console.log(req.headers);
+  res.send(req.user);
+});
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT);
