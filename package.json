@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"yarn run start\" \"yarn --cwd ./client run start\"",
+    "dev": "concurrently \"npm run start\" \"npm --prefix ./client run start\"",
     "start": "nodemon index.js"
   },
   "author": "",
